@@ -14,7 +14,7 @@ contract KittyInterface {
         uint256 sireId,
         uint256 generation,
         uint256 genes
-    );
+    ); //end external from cryptokitty contract: function getKitty()
 
 } //end contract KittyInterface{}
 
