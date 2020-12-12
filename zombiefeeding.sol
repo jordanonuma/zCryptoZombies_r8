@@ -30,7 +30,7 @@ contract ZombieFeeding is ZombieFactory {
         _targetDna = _targetDna % dnaModulus; //This will take the last x digits of 10**x. For example MOD(12345,10^4) yields 2345.
         uint newDna = (myZombie.dna + _targetDna) / 2;
 
-        if (keccak256(abi.encodePacked(_species)) == keccak256(abi.encodePacked("kitty")) {
+        if (keccak256(abi.encodePacked(_species)) == keccak256(abi.encodePacked("kitty"))) {
             newDna = newDna - newDna % 100 + 99;
         } //end if()
 
