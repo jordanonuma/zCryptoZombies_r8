@@ -5,6 +5,6 @@ contract ZombieAttack is ZombieHelper {
     uint randNonce = 0;
 
     function randMod(uint _modulus) internal returns(uint) {
-    
+        randNonce++;
     } //end function randMod()
 } //end contract ZombieAttack{}
