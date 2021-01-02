@@ -19,6 +19,8 @@ contract ZombieAttack is ZombieHelper {
             myZombie.winCount++;
             myZombie.level++;
             enemyZombie.lossCount++;
+
+            feedAndMultiply(_zombieId, _targetId, "zombie");
         } //end if()
     } //end function attack()
 } //end contract ZombieAttack{}
