@@ -21,6 +21,10 @@ contract ZombieAttack is ZombieHelper {
             enemyZombie.lossCount++;
 
             feedAndMultiply(_zombieId, enemyZombie.dna, "zombie");
-        } //end if()
+        } else {
+            myZombie.lossCount++;
+            enemyZombie.winCount++;
+      
+        }//end if()
     } //end function attack()
 } //end contract ZombieAttack{}
