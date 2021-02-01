@@ -9,7 +9,7 @@ contract ExampleGame is ZBGameMode  {
         gameState.init(serializedGameState);
 
         ZBSerializer.SerializedGameStateChanges memory changes;
-        changes.init();
+        changes.init(); //initialized changes with this line
     } //end function beforeMatchStart()
 
 } //end contract ExampleGame{}
