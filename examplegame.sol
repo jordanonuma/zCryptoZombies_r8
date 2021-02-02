@@ -11,9 +11,11 @@ contract ExampleGame is ZBGameMode  {
         ZBSerializer.SerializedGameStateChanges memory changes;
         changes.init(); //initialized changes with this line
 
+        //Start of the state: each player has level 15 defense
         changes.changePlayerDefense(Player.Player1, 15);
         changes.changePlayerDefense(Player.Player2, 15);
-        
+
+        //Start of the state: each player has 3 empty vials
         changes.changePlayerCurrentGooVials(Player.Player1, 3);
         changes.changePlayerCurrentGooVials(Player.Player2, 3);
 
