@@ -65,6 +65,7 @@ contract ExampleGame is ZBGameMode  {
                     cardCount++;
                 } //end if()
             } //end for()
+            changes.changePlayerCardsInDeck(Player(i), newCards, CardCount); //swaps out old cards for the approved cards in array newCards[]
         } //end for()
     } //end function beforeMatchStart()
 
