@@ -29,6 +29,10 @@ contract Munchkin is ZBGameMode  {
 
         changes.emit();
 
-    }
+        function isLegalCard(CardInstance card) internal view returns(bool) {
 
-}
+        } //end function isLegalCard()
+
+    } //end function beforeMatchStart()
+
+} //end contract Munchkin{}
