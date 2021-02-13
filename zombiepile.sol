@@ -12,8 +12,8 @@ contract ZombiePile is ZBGameMode  {
         ZBSerializer.SerializedGameStateChanges memory changes;
         changes.init();
 
-        CardInstance[] memory player1Cards = new CardInstance[](gameState.playerStates[i].cardsInDeck.length);
-        CardInstance[] memory player2Cards = new CardInstance[](gameState.playerStates[i].cardsInDeck.length);
+        CardInstance[] memory player1Cards = new CardInstance[](gameState.playerStates[0].cardsInDeck.length);
+        CardInstance[] memory player2Cards = new CardInstance[](gameState.playerStates[1].cardsInDeck.length);
         uint cardCount = 0;
 
         // Custom game logic will go here
