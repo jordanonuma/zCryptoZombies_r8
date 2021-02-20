@@ -1,5 +1,7 @@
 const HDWalletProvider = require("truffle-hdwallet-provider");
 
+const LoomTruffleProvider = require('loom-truffle-provider');
+
 // Set your own mnemonic here
 const mnemonic = "YOUR_MNEMONIC";
 
