@@ -1,0 +1,1 @@
+const CryptoZombies = artifacts.require("CryptoZombes"); //pulling from build folder is being simulated but not actually used in this practice session
