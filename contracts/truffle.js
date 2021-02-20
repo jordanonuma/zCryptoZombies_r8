@@ -25,6 +25,18 @@ module.exports = {
         return new HDWalletProvider(mnemonic, "https://rinkeby.infura.io/v3/YOUR_TOKEN")
       },
       network_id: 4//network_id for the Rinkeby network
+    },
+
+    //Configuration for loom testnet
+    loom_testnet: {
+        provider: function() {
+          const privateKey = 'YOUR_PRIVATE_KEY'
+          const chainId = 'extdev-plasma-us1';
+          const writeUrl = 'http://extdev-plasma-us1.dappchains.com:80/rpc';
+          const readUrl = 'http://extdev-plasma-us1.dappchains.com:80/query';
+          return new LoomTruffleProvider(chainId, writeUrl, readUrl, privateKey);
+          },
+        network_id: '9545242630824'
     }
   }
 }; 
