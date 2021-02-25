@@ -14,4 +14,8 @@ contract("CryptoZombies", (accounts) => {
         assert.equal(result.receipt.status, true);
         assert.equal(result.logs[0].args.name, zombieNames[0]);
     })
+
+    it("shold not allow two zombies", async () => {
+        
+    })
 }) //end contract{}
