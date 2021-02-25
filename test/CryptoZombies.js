@@ -5,7 +5,7 @@ contract("CryptoZombies", (accounts) => {
     let contractInstance;
 
     beforeEach(async () => {
-
+        contractInstance = await CryptoZombies.new();
     });
 
     it("should be able to create a new zombie", async () => {
