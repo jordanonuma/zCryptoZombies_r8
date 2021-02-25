@@ -3,7 +3,11 @@ const CryptoZombies = artifacts.require("CryptoZombies"); //pulling from build f
 contract("CryptoZombies", (accounts) => {
     let [alice, bob] = accounts;
     let contractInstance;
-    
+
+    beforeEach(async () => {
+
+    });
+
     it("should be able to create a new zombie", async () => {
         const contractInstance = await CryptoZombies.new();
         const result = await contractInstance.createRandomZombie(zombieNames[0], {from: alice});
