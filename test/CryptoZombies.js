@@ -19,13 +19,13 @@ contract("CryptoZombies", (accounts) => {
         await utils.shouldThrow(contractInstance.createRandomZombie(zombieNames[1], {from: alice}));
     })
 
-    context("with the single-step transfer scenario", async () => {
+    xcontext("with the single-step transfer scenario", async () => {
         it("should transfer a zombie", async () => {
         // TODO: Test the single-step transfer scenario.
         })
     })
 
-    context("with the two-step transfer scenario", async () => {
+    xcontext("with the two-step transfer scenario", async () => {
         it("should approve and then transfer a zombie when the approved address calls transferFrom", async () => {
         // TODO: Test the two-step scenario.  The approved address calls transferFrom
         })
