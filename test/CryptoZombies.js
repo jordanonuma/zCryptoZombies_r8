@@ -19,7 +19,7 @@ contract("CryptoZombies", (accounts) => {
         await utils.shouldThrow(contractInstance.createRandomZombie(zombieNames[1], {from: alice}));
     })
 
-    xcontext("with the single-step transfer scenario", async () => {
+    context("with the single-step transfer scenario", async () => {
         it("should transfer a zombie", async () => {
             const result = await contractInstance.createRandomZombie(zombieNames[0], {from: alice});
             const zombieId = result.logs[0].args.zombieId.toNumber();
