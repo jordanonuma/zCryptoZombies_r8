@@ -24,8 +24,8 @@ contract("CryptoZombies", (accounts) => {
             const result = await contractInstance.createRandomZombie(zombieNames[0], {from: alice});
             const zombieId = result.logs[0].args.zombieId.toNumber();
             await contractInstance.transferFrom(alice, bob, zombieId, {from: alice});
-            const newOwner = contractInstance.ownerOf(zombieId);
-            assertequal(newOwner, bob);
+            const newOwner = await contractInstance.ownerOf(zombieId);
+            assert.equal(newOwner, bob);
         })
     })
 
