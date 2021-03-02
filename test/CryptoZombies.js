@@ -34,6 +34,7 @@ contract("CryptoZombies", (accounts) => {
             const result = await contractInstance.createRandomZombie(zombieNames[0], {from: alice});
             const zombieId = result.logs[0].args.zombieId.toNumber();
             await contractInstance.approve(bobb, zombieId, {from: alice});
+            await contractInstance.transferFrom(alice, bob, zombieId, {from: bob});
         })
         it("should approve and then transfer a zombie when the owner calls transferFrom", async () => {
             // TODO: Test the two-step scenario.  The owner calls transferFrom
