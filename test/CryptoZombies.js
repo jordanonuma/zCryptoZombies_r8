@@ -2,6 +2,8 @@ const CryptoZombies = artifacts.require("CryptoZombies"); //pulling from build f
 const utils = require("./helpers/utils");
 const time = require("./helpers/time");
 
+var expect = require('chai').expect;
+
 contract("CryptoZombies", (accounts) => {
     let [alice, bob] = accounts;
     let contractInstance;
