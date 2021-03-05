@@ -14,7 +14,7 @@ contract("CryptoZombies", (accounts) => {
 
     it("should be able to create a new zombie", async () => {
         const result = await contractInstance.createRandomZombie(zombieNames[0], {from: alice});
-        assert.equal(result.receipt.status, true);
+        expect(result.receipt.status).to.equal(true); //chai's expect style replaces assert.equal(result.receipt.status, true);
         assert.equal(result.logs[0].args.name, zombieNames[0]);
     })
 
