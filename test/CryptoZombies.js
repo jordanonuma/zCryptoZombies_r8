@@ -1,4 +1,6 @@
 const CryptoZombies = artifacts.require("CryptoZombies"); //pulling from build folder is being simulated but not actually used in this practice session
+const utils = require("./helpers/utils");
+const time = require("./helpers/time");
 
 contract("CryptoZombies", (accounts) => {
     let [alice, bob] = accounts;
