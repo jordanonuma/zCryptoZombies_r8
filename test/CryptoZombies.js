@@ -15,7 +15,7 @@ contract("CryptoZombies", (accounts) => {
     it("should be able to create a new zombie", async () => {
         const result = await contractInstance.createRandomZombie(zombieNames[0], {from: alice});
         expect(result.receipt.status).to.equal(true); //chai's expect style replaces assert.equal(result.receipt.status, true);
-        expect(zombieOwner.to.equal(alice); //replaces assert.equal(result.logs[0].args.name, zombieNames[0]);
+        expect(zombieOwner).to.equal(alice); //replaces assert.equal(result.logs[0].args.name, zombieNames[0]);
     })
 
     it("should not allow two zombies", async () => {
@@ -29,7 +29,7 @@ contract("CryptoZombies", (accounts) => {
             const zombieId = result.logs[0].args.zombieId.toNumber();
             await contractInstance.transferFrom(alice, bob, zombieId, {from: alice});
             const newOwner = await contractInstance.ownerOf(zombieId);
-            assert.equal(newOwner, bob);
+            expect(newOwner).to.equal(bob); //assert.equal(newOwner, bob);
         })
     })
 
