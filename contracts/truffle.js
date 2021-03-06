@@ -34,7 +34,12 @@ module.exports = {
           const chainId = 'extdev-plasma-us1';
           const writeUrl = 'http://extdev-plasma-us1.dappchains.com:80/rpc';
           const readUrl = 'http://extdev-plasma-us1.dappchains.com:80/query';
-          return new LoomTruffleProvider(chainId, writeUrl, readUrl, privateKey);
+          // replaced the following with our own truffle provider below: return new LoomTruffleProvider(chainId, writeUrl, readUrl, privateKey);
+          // truffle provider
+          const loomTruffleProvider = new LoomTruffleProvider(chainId, writeUrl, readUrl, privateKey);
+          loomTruffleProvider.createExtraAccountsFromMnemonic(mnemonic, 10);
+          return loomTruffleProvider;
+
           },
         network_id: '9545242630824'
     }
