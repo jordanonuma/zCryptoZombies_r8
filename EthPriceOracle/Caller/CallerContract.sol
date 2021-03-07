@@ -7,5 +7,6 @@ contract CallerContract {
 
     function setOracleInstanceAddress(address _oracleInstanceAddres) public {
         oracleAddress = _oracleInstanceAddress;
+        oracleInstance = EthPriceOracleInterface(oracleAddress);
     } //end function setOracleInstanceAddress()
 } //end contract CallerContract{}
