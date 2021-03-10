@@ -5,6 +5,7 @@ import "./../../ownable.sol";
 contract CallerContract is Ownable {
     EthPriceOracleInterface private oracleInstance;
     address private oracleAddress;
+    event newOracleAddressEvent(address oracleAddress);
 
     function setOracleInstanceAddress(address _oracleInstanceAddres) public onlyOwner {
         oracleAddress = _oracleInstanceAddress;
