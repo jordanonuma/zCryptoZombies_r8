@@ -2,7 +2,7 @@ pragma solidity 0.5.0;
 import "./EthPriceOracleInterface.sol";
 import "./../../ownable.sol";
 
-contract CallerContract {
+contract CallerContract is Ownable {
     EthPriceOracleInterface private oracleInstance;
     address private oracleAddress;
 
