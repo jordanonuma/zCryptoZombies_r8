@@ -1,5 +1,6 @@
 pragma solidity 0.5.0;
 import "./EthPriceOracleInterface.sol";
+import "./../../ownable.sol";
 
 contract CallerContract {
     EthPriceOracleInterface private oracleInstance;
