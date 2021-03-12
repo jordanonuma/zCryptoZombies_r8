@@ -3,6 +3,7 @@ import "./EthPriceOracleInterface.sol";
 import "./../../ownable.sol";
 
 contract CallerContract is Ownable {
+    uint private ethPrice;
     EthPriceOracleInterface private oracleInstance;
     address private oracleAddress;
     event newOracleAddressEvent(address oracleAddress);
