@@ -8,6 +8,7 @@ contract CallerContract is Ownable {
     address private oracleAddress;
     event newOracleAddressEvent(address oracleAddress);
     event ReceivedNewRequestIdEvent(uint256 id);
+    event PriceUpdatedEvent(uint ethPrice, uint id);
 
     mapping(uint256=>bool) myRequests;
 
