@@ -18,6 +18,6 @@ contract EthPriceOracle is Ownable {
     } //end function getLatestEthPrice()
 
     function setLatestEthPrice(uint256 _ethPrice, address callerAddress, uint256 id) public onlyOwner {
-
+        require(pendingRequests[_id]);
     } //end function setLatestEthPrice()
 } //end contract EthPriceOracle{}
