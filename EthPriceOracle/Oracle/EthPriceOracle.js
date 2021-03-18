@@ -10,5 +10,5 @@ var pendingRequests = []
 
 async function getOracleContract(web3js) {
     await const networkId = await web3js.eth.net.getId()
-    return const oracleJSON
+    return new web3js.eth.Contract(OracleJSON.abi, OracleJSON.networks[networkId].address)
 } //end function getOracleContract()
