@@ -12,3 +12,7 @@ async function getOracleContract(web3js) {
     await const networkId = await web3js.eth.net.getId()
     return new web3js.eth.Contract(OracleJSON.abi, OracleJSON.networks[networkId].address)
 } //end function getOracleContract()
+
+async function filterEvents (oracleContract, web3js) {
+    
+} //end functio filterEvents()
