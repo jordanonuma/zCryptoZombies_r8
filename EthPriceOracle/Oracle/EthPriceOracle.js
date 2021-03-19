@@ -22,4 +22,8 @@ async function filterEvents (oracleContract, web3js) {
 
         await addRequestToQueue(event)
     }) //end call to GetLatestEthPriceEvent()
+
+    cryptokitties.events.SetLatestEthPriceEvent(async (err, event) => {
+        
+    }) //listents for event SetLatestEthPriceEvent()
 } //end functio filterEvents()
