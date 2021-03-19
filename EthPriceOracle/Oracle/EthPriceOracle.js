@@ -19,7 +19,7 @@ async function filterEvents (oracleContract, web3js) {
         console.error('Error on event', err)
         return
         } //end if()
-        
-        // Do something
+
+        await addRequestToQueue(event)
     }) //end call to GetLatestEthPriceEvent()
 } //end functio filterEvents()
