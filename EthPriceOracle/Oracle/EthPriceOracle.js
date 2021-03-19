@@ -14,5 +14,12 @@ async function getOracleContract(web3js) {
 } //end function getOracleContract()
 
 async function filterEvents (oracleContract, web3js) {
-    
+    cryptokitties.events.GetLatestEthPriceEvent({ filter: { myParam: 1 } ,async (err, event) => {
+        if (err) {
+        console.error('Error on event', err)
+        return
+        } //end if()
+        
+        // Do something
+    }) //end call to GetLatestEthPriceEvent()
 } //end functio filterEvents()
