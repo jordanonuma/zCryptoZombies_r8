@@ -28,4 +28,8 @@ async function filterEvents (oracleContract, web3js) {
             console.error('Error on event', err)
         }
     }) //listents for event SetLatestEthPriceEvent()
-} //end functio filterEvents()
+} //end function filterEvents()
+
+async function addRequestToQueue (event) {
+
+} //end function addRequestToQueue()
