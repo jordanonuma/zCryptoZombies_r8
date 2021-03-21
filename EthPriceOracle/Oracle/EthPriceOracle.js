@@ -38,4 +38,7 @@ async function addRequestToQueue (event) {
 
 async function processQueue (oracleContract, ownerAddress) {
     let const processedRequests = 0;
+    while (pendingRequests.length > 0 && processedRequests < CHUNK_SIZE) {
+        
+    } //end while()
 } //end function processQueue()
