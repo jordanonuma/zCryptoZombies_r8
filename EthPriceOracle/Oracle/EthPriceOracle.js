@@ -46,5 +46,9 @@ async function processQueue (oracleContract, ownerAddress) {
 } //end function processQueue()
 
 async function processRequest (oraclecontract, ownerAddress, id, callerAddress) {
-    
+    try { 
+
+    } catch (error) {
+
+    } //end try-catch()
 } //end function processRequest()
