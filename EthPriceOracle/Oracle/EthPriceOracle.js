@@ -44,3 +44,7 @@ async function processQueue (oracleContract, ownerAddress) {
         processedRequests++
     } //end while()
 } //end function processQueue()
+
+async function processRequest (oraclecontract, ownerAddress, id, callerAddress) {
+    
+} //end function processRequest()
