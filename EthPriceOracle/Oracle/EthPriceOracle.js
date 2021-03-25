@@ -51,7 +51,7 @@ async function processRequest (oracleContract, ownerAddress, id, callerAddress) 
             const ethPrice = await retrieveLatestEthPrice()
             await setLatestEthPrice(oracleContract, callerAddress, ownerAddress, ethPrice, id)
         } catch (error) {
-
+            return
         } //end try-catch()
     } //end while()
 } //end function processRequest()
