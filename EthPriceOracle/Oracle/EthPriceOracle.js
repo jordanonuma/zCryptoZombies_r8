@@ -76,5 +76,6 @@ async function setLatestEthPrice (oracleContract, callerAddress, ownerAddress, e
 } //end function setLatestEthPrice()
 
 async function init () {
-    
+    {ownerAddress, web3js, client} =  common.loadAccount (BLANK_FILE_NAME) 
+    const oracleContract = await getOracleContract (web3js)
 } //end function init()
