@@ -68,10 +68,9 @@ async function setLatestEthPrice (oracleContract, callerAddress, ownerAddress, e
     const ethPriceInt = (new BN(parseInt(ethPrice), 10)).mul(multiplier)
     const idInt = new BN(parseInt(id))
     try {
-      await oracleContract.methods.setLatestEthPrice(ethPriceInt.toString(), callerAddress, idInt.toString()).send({ from: ownerAddress })
+        await oracleContract.methods.setLatestEthPrice(ethPriceInt.toString(), callerAddress, idInt.toString()).send({ from: ownerAddress })
     } catch (error) {
-      console.log('Error encountered while calling setLatestEthPrice.')
-      // Do some error handling
+        console.log('Error encountered while calling setLatestEthPrice.')
     }
 } //end function setLatestEthPrice()
 
@@ -85,11 +84,11 @@ async function init () {
 (async () => {
     const { oracleContract, ownerAddress, client } = await init()
     process.on( 'SIGINT', () => {
-      console.log('Calling client.disconnect()')
-      // 1. Execute client.disconnect
-      process.exit( )
+        console.log('Calling client.disconnect()')
+        client.disconnect()
+        process.exit( )
     })
     setInterval(async () => {
-      // 2. Run processQueue
+        await processQueue(oracleContract, ownerAddress)
     }, SLEEP_INTERVAL)
 })()  //end async()
