@@ -3,7 +3,9 @@ import "./../../Ownable.sol";
 import "./../Caller/CallerContractInterface.sol";
 import "./../Roles.sol";
 
-contract EthPriceOracle is Ownable {
+contract EthPriceOracle {
+    using Roles for Roles.Role;
+
     uint private randNonce = 0;
     uint private modulus = 1000;
     mapping(uint256=>bool) pendingRequests;
