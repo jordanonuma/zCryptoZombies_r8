@@ -1,6 +1,7 @@
 pragma solidity 0.5.0;
 import "./../../Ownable.sol";
 import "./../Caller/CallerContractInterface.sol";
+import "./../Roles.sol";
 
 contract EthPriceOracle is Ownable {
     uint private randNonce = 0;
