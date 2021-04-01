@@ -15,7 +15,7 @@ contract EthPriceOracle {
     event SetLatestEthPriceEvent(uint256 ethPrice, address callerAddress);
   
     constructor EthPriceOracle(address _owner) public {
-        
+        owners.add(_owner);
     } //end constructor EthPriceOracle()
 
     function getLatestEthPrice() public returns(uint256) {
