@@ -56,6 +56,9 @@ contract EthPriceOracle {
     function setLatestEthPrice(uint256 _ethPrice, address _callerAddress, uint256 _id) public {
         require(oracles.has(msg.sender), "Not an oracle!");
         require(pendingRequests[_id], "This request is not in my pending list");
+
+        Response memory resp;
+        
         delete pendingRequests[_id];
 
         CallerContractInterface callerContractInstance;
