@@ -61,15 +61,15 @@ contract EthPriceOracle {
         resp = Response(msg.sender, _callerAddress, _ethPrice);
         requestIdToResponse[_id].push(resp);
 
-        numResponses = requestIdToResponse[_id].length;
+        uint numResponses = requestIdToResponse[_id].length;
 
         if (numResponses == THRESHOLD) {
+            delete pendingRequests[_id];
             CallerContractInterface callerContractInstance;
             callerContractInstance = CallerContractInterface(_callerAddress);
             callerContractInstance.callback(_ethPrice, _id);
             emit SetLatestEthPriceEvent(_ethPrice, _callerAddress);
         } //end if()
 
-        delete pendingRequests[_id];
     } //end function setLatestEthPrice()
 } //end contract EthPriceOracle{}
