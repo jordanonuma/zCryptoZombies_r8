@@ -69,6 +69,8 @@ contract EthPriceOracle {
                 computedEthPrice += request IdToResponse[_id][f].ethPrice;
             } //end for()
 
+            computedEthPrice = computedEthPrice / numResponse;
+            
             delete pendingRequests[_id];
             CallerContractInterface callerContractInstance;
             callerContractInstance = CallerContractInterface(_callerAddress);
