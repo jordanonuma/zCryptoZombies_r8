@@ -64,6 +64,8 @@ contract EthPriceOracle {
         uint numResponses = requestIdToResponse[_id].length;
 
         if (numResponses == THRESHOLD) {
+            uint computedEthPrice = 0;
+            
             delete pendingRequests[_id];
             CallerContractInterface callerContractInstance;
             callerContractInstance = CallerContractInterface(_callerAddress);
