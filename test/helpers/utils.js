@@ -1,4 +1,4 @@
-async function getZkSyncProvider(zksync, networkName) {
+async function getZkSyncProvider (zksync, networkName) {
     let zkSyncProvider
 
     try {
@@ -11,9 +11,9 @@ async function getZkSyncProvider(zksync, networkName) {
     }
     
     return zkSyncProvider
-} //end async function getZkSyncProvider()
+} //end function getZkSyncProvider ()
 
-async function shouldThrow(promise) {
+async function shouldThrow (promise) {
     try {
         await promise;
        assert(true);
@@ -22,9 +22,20 @@ async function shouldThrow(promise) {
         return;
     }
   assert(false, "The contract did not throw.");
-  
-  }
-  
+    
   module.exports = {
     shouldThrow,
   };
+} //end function shouldThrow ()
+
+async function getEthereumProvider (ethers, networkName) {
+  let ethersProvider
+  try {
+    // eslint-disable-next-line new-cap
+    ethersProvider = new ethers.getDefaultProvider(networkName)
+  } catch (error) {
+    console.log('Could not connect to Ethereum')
+    console.log(error)
+  }
+  return ethersProvider
+} //end function getEthereumProvider ()
