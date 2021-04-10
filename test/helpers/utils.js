@@ -29,17 +29,17 @@ async function shouldThrow (promise) {
 } //end function shouldThrow ()
 
 async function getEthereumProvider (ethers, networkName) {
-  let ethersProvider
-  try {
-    // eslint-disable-next-line new-cap
-    ethersProvider = new ethers.getDefaultProvider(networkName)
-  } catch (error) {
-    console.log('Could not connect to Ethereum')
-    console.log(error)
-  }
-  return ethersProvider
+    let ethersProvider
+    try {
+      // eslint-disable-next-line new-cap
+      ethersProvider = new ethers.getDefaultProvider(networkName)
+    } catch (error) {
+      console.log('Could not connect to Ethereum')
+      console.log(error)
+    }
+    return ethersProvider
 } //end function getEthereumProvider ()
 
 async function initAccount (rinkebyWallet, zkSyncProvider, zksync) {
-    
+    const zkSyncWallet = await zksync.Wallet.fromEthSigner(rinkebyWallet, zkSyncProvider)
 } //end function initAccount ()
