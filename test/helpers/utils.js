@@ -3,12 +3,14 @@ async function getZkSyncProvider(zksync, networkName) {
 
     try {
         // Initialize the provider
-        await zksync.getDefaultProvider(networkName)
+        zkSyncProvider = await zksync.getDefaultProvider(networkName)
     } catch (error) {
         // Display an error message
         console.log('Unable to connect to zkSync.')
         console.log(error)
     }
+    
+    return zkSyncProvider
 } //end async function getZkSyncProvider()
 
 async function shouldThrow(promise) {
