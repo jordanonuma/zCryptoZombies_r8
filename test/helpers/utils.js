@@ -58,7 +58,7 @@ async function registerAccount (wallet) {
 
 async function depositToZkSync (zkSyncWallet, token, amountToDeposit, ethers) {
     const deposit = await zkSyncWallet.depositToSyncFromEthereum({
-        depositTo: zkSyncWallet.address,
+        depositTo: zkSyncWallet.address(),
         token: token,
         amount: ethers.utils.parseEther(amountToDeposit)
     }) //end depositToSyncFromEthereum ()
