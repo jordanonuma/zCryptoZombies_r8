@@ -104,3 +104,7 @@ async function withdrawToEthereum (wallet, amountToWithdraw, withdrawalFee, toke
     console.log('ZKP verification is complete')
 
 } //end withdrawToEthereum ()
+
+async function displayZkSyncBalance (wallet, ethers) {
+      
+} //end displayZkSyncBalance ()
