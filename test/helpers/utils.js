@@ -91,7 +91,12 @@ async function getFee (transactionType, address, token, zkSyncProvider, ethers) 
 
 async function withdrawToEthereum (wallet, amountToWithdraw, withdrawalFee, token, zksync, ethers) {
 
-
+      const closestPackableAmount = await wallet.withdrawFromSyncToEthereum({
+        ethAddress: recipientEthereumAddress,
+        token: token,
+        amount: ethers.utils.parseEther(amountToWithdraw),
+        fee: closestPackableFee
+    }) //end .withdrawFromSyncToEthereum ()
 
     console.log('ZKP verification is complete')
 
