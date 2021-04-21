@@ -17,7 +17,7 @@
         process.exit() // Disconnect
     }) //end process.on()
     setInterval(async () => {
-        
+        await utils.displayZkSyncBalance(bobZksyncWallet, ethers)
         console.log('---')
     }, SLEEP_INTERVAL)
 })() //end setInterval()
