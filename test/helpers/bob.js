@@ -11,4 +11,13 @@
     console.log('Bob's Rinkeby address is: ${bobRinkebyWallet.address})')
     console.log('Bob's initial balance on Rinkeby is: ${ethers.utils.formatEther(await bobRinkebyWallet.getBalance())}')
     const bobZkSync = await utils.initAccount(bobRinkebyWallet, zkSyncProvider, zkSync)
-})()
+
+    process.on('SIGINT', () => {
+        console.log('Disconnecting')
+        process.exit() // Disconnect
+    }) //end process.on()
+    setInterval(async () => {
+        
+        console.log('---')
+    }, SLEEP_INTERVAL)
+})() //end setInterval()
