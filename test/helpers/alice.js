@@ -18,8 +18,8 @@
     const aliceZkSyncWallet = await utils.initAccount(aliceRinkebyWallet, zkSyncProvider, zksync)
     
     const tokenSet = zkSyncProvider.tokenSet
-    aliceZkSyncWallet.getEthereumBlance(token)
-    console.log(`Alice's initial balance on Rinkeby is: ${tokenSet.formatEther(token, aliceInitialRinkebyBalance)}`)
+    const aliceInitialRinkebyBalance = await aliceZkSyncWallet.getEthereumBalance(token)
+    console.log(`Alice's initial balance on Rinkeby is: ${tokenSet.formatToken(token, aliceInitialRinkebyBalance)}`)
 
     console.log('Depositing')
     await utils.depositToZkSync(aliceZkSyncWallet, token, amountToDeposit, ethers)
