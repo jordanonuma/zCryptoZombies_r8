@@ -105,8 +105,18 @@ async function withdrawToEthereum (wallet, amountToWithdraw, withdrawalFee, toke
 
 } //end withdrawToEthereum ()
 
-async function displayZkSyncBalance (wallet, ethers) {
+async function displayZkSyncBalance (wallet, tokenSet) {
     const state = await wallet.getAccountState()
+
+    const committedBalance = state.committed.balances()
+    const verifiedBalances = state.verified.balances()
+    for (property in committedBalances){
+        console.log(`Committed ${property} balance for ${wallet.address()}: ${tokenSet.formatToken(property, committedBalances[property])}`)
+    } //end for()
+    for (property in verifiedBalances) {
+        console.log(`Verified ${property} balance for ${wallet.address()}: ${tokenSet.formatToken(property, verifiedBalances[property])}`)
+    } //end for()
+
     if (state.committed.balances.ETH) {
         console.log(`Commited ETH balance for ${wallet.address()}: ${ethers.utils.formatEther(state.committed.balances.ETH)}`)
     } else {
